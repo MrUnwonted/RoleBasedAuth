@@ -184,9 +184,9 @@
 						<!-- <label for="username">Username:</label>
 						<input type="text" id="username" name="username"> -->
 						<label for="role">Role:</label>
-						<select id="role" name="role">
-							<option value="USER">USER</option>
-							<option value="ADMIN">ADMIN</option>
+						<select id="role" th:field="*{roles}" name="role" required>
+							<option value="1">ADMIN</option>
+							<option value="2" selected>USER</option>
 						</select>
 
 						<!-- <input type="submit" value="Assign Role">
@@ -205,7 +205,7 @@
 					</div>
 					<div class="card-footer py-3 border-0">
 						<div class="text-center">
-							Don't have an account? <a th:href="@{/login}" class="text-dark">Already have Account</a>
+							 <a th:href="@{/}" class="text-dark">BACK</a>
 						</div>
 					</div>
 				</div>
