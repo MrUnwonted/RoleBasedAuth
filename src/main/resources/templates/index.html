@@ -132,7 +132,7 @@
 					<div class="p-2 icons">
 						<a th:href="@{'/edit/' + ${user.id}}"><button class="btn btn-outline-dark" sec:authorize="hasAuthority('ADMIN')"><i class="fa fa-pen text-success"></i></button></a>
 						<a th:href="@{'/delete/' + ${user.id}}"><button class="btn btn-outline-dark" sec:authorize="hasAuthority('ADMIN')"><i class="fa-solid fa-user-minus text-danger"></i></button></a>
-						<a th:href="@{'/edit/assign-role' + ${user.id}}"><button class="btn btn-outline-dark" sec:authorize="hasAuthority('ADMIN')"><i class="fa fa-id-badge" aria-hidden="true"></i></button></a>
+						<!-- <a th:href="@{'/edit/assign-role' + ${user.id}}"><button class="btn btn-outline-dark" sec:authorize="hasAuthority('ADMIN')"><i class="fa fa-id-badge" aria-hidden="true"></i></button></a> -->
 					</div>
 				</td>
 			</tr>
