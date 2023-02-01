@@ -1,4 +1,4 @@
-package com.midlaj.springCRUD.security;
+package com.mvc.springCRUD.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

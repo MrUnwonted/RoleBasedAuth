@@ -1,12 +1,12 @@
-package com.midlaj.springCRUD.security;
+package com.mvc.springCRUD.security;
 
-import com.midlaj.springCRUD.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.midlaj.springCRUD.repository.UserRepository;
+import com.mvc.springCRUD.model.User;
+import com.mvc.springCRUD.repository.UserRepository;
 
 public class UserDetailsServiceImpl implements UserDetailsService {
 	

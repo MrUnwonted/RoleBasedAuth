@@ -1,9 +1,10 @@
-package com.midlaj.springCRUD.services;
+package com.mvc.springCRUD.services;
 
-import com.midlaj.springCRUD.model.User;
-import com.midlaj.springCRUD.repository.RoleRepository;
-import com.midlaj.springCRUD.repository.UserRepository;
-import com.midlaj.springCRUD.model.Role;
+import com.mvc.springCRUD.model.Role;
+import com.mvc.springCRUD.model.User;
+import com.mvc.springCRUD.repository.RoleRepository;
+import com.mvc.springCRUD.repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;

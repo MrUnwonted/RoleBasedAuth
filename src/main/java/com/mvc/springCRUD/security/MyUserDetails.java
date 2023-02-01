@@ -1,4 +1,4 @@
-package com.midlaj.springCRUD.security;
+package com.mvc.springCRUD.security;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,8 +9,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.midlaj.springCRUD.model.Role;
-import com.midlaj.springCRUD.model.User;
+import com.mvc.springCRUD.model.Role;
+import com.mvc.springCRUD.model.User;
 
 public class MyUserDetails implements UserDetails {
 

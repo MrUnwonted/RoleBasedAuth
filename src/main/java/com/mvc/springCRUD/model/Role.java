@@ -1,4 +1,4 @@
-package com.midlaj.springCRUD.model;
+package com.mvc.springCRUD.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

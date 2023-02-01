@@ -1,8 +1,9 @@
-package com.midlaj.springCRUD.controller;
+package com.mvc.springCRUD.controller;
 
-import com.midlaj.springCRUD.model.Role;
-import com.midlaj.springCRUD.model.User;
-import com.midlaj.springCRUD.services.UserService;
+import com.mvc.springCRUD.model.Role;
+import com.mvc.springCRUD.model.User;
+import com.mvc.springCRUD.services.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -44,9 +45,6 @@ public class AppController {
 
 	@RequestMapping("/edit/{id}")
 	public String showEditUserPage(Model model, @PathVariable (name="id") Long id) {
-//		ModelAndView mav=new ModelAndView("edit_student");
-//		User user=userService.get(id);
-//		mav.addObject("user",user);
 		User user=new User();
 		model.addAttribute(user);
 		model.addAttribute(id);
