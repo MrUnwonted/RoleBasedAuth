@@ -5,6 +5,7 @@ import com.mvc.springCRUD.model.User;
 import com.mvc.springCRUD.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,10 +23,23 @@ public class AppController {
 	UserService userService;
 
 	
+//	@GetMapping("/")
+//	public String viewHomePage(Model model) {
+//		List<User> listUser = userService.listAll();
+//		model.addAttribute("listUser",listUser);
+//		return "index";
+//	}
+	
 	@GetMapping("/")
-	public String viewHomePage(Model model) {
-		List<User> listUser = userService.listAll();
+	public String viewHomePage(Model model, @Param("keyword") String keyword ) {
+		List<User> listUser = userService.listAll(keyword);
+//		List<User> findUser = userService.searchUsers();
+//		if(keyword == null) {
 		model.addAttribute("listUser",listUser);
+//		}
+//		else {
+		 model.addAttribute("keyword", keyword);
+//		 }
 		return "index";
 	}
 
