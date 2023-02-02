@@ -13,7 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
+
 
 @Controller
 public class AppController {
@@ -67,6 +67,14 @@ public class AppController {
 
 		model.addAttribute("message", "Role assigned successfully!");
 		return "redirect:/";
+	}
+	
+	@GetMapping("/showNewUserForm")
+	public String showNewUserForm(Model model) {
+//		create model attribute to bind form data
+		User user = new User(); 
+		model.addAttribute("user", user);
+		return "new_user";
 	}
 	
 //	@PostMapping(path="/edit/assign-role/{id}")

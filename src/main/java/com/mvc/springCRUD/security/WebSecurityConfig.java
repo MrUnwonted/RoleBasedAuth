@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.annotation.Resource;
 
@@ -52,13 +53,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/register/**").permitAll()
 				.antMatchers("/new").hasAnyAuthority("ADMIN")
 				.antMatchers("/edit/**").hasAnyAuthority("ADMIN")
-				.antMatchers("/assign-role/**").hasAnyAuthority("ADMIN")
+//				.antMatchers("/assign-role/**").hasAnyAuthority("ADMIN")
 				.antMatchers("/delete/**").hasAuthority("ADMIN")
 				.and()
 				.formLogin()
 				.loginPage("/login")
 				.defaultSuccessUrl("/").permitAll()
-				.and().logout().permitAll().and().exceptionHandling().accessDeniedPage("/404");
+				.and().logout()
+				.invalidateHttpSession(true)
+				.clearAuthentication(true)
+				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+				.logoutSuccessUrl("/login?logout")
+				.permitAll().and().exceptionHandling().accessDeniedPage("/404");
 
 		http.csrf().disable();
 		http.headers().frameOptions().disable();
